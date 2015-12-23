@@ -1,5 +1,5 @@
+<!-- LAYOUT -->
 <template name="layout">
-
   <header>
     <div class="container">
       <h1>My Meteor Single Page App</h1>
@@ -8,7 +8,7 @@
           <a href="/">Home</a>
         </li>
         <li>
-          <a class="/about">About</a>
+          <a href="/about">About</a>
         </li>
       </ul>
     </div>
@@ -16,8 +16,15 @@
 
   <div class="container">
     <main>
-    {{> home}}
+    {{> yield}}
     </main>
   </div>
+</template>
 
+<!-- NOT FOUND -->
+<template name="notFound">
+  <div class="center">
+    <h1>Nothing here</h1><br>
+    <h2>You hit a page which does not exist.</h2>
+  </div>
 </template>
