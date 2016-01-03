@@ -16,6 +16,9 @@ Template.home.helpers({
   // Other helpers...
   postsList: function(){
     return Posts.find({}, {sort: {timeCreated:-1}});
+  },
+  sessionExample: function(){
+    return Session.get('mySessionExample');
   }
 });
 

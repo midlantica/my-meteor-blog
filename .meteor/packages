@@ -21,3 +21,5 @@ less
 jeeeyul:moment-with-langs
 markdown
 iron:router
+multiply:iron-router-progress
+reactive-var

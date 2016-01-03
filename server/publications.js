@@ -30,3 +30,7 @@ Meteor.publish('lazyload-posts', function(limit){
     sort: {timeCreated: -1}
   });
 });
+
+Meteor.publish("single-post", function(slug){
+  return Posts.find({slug: slug});
+});
