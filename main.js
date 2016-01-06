@@ -1,25 +1,24 @@
+Accounts.config({
+  forbidClientAccountCreation: true
+});
+
+if(Meteor.users.find().count() === 0) {
+  var userId = Accounts.createUser({
+    username: 'johndoe',
+    email: 'john@doe.com',
+    password: '1234',
+    profile: {
+      name: 'John Doe'
+    }
+  });
+}
+
+// add the roles to our user
+Meteor.users.update(userId, {$set: {
+  roles: {admin: true},
+}})
+
+
 if(Meteor.isClient){
-
-// Session.setDefault('mySessionExample', 'Duuuuuude')
-
-  // Tracker.autorun(function(c){
-  //   var example = Session.get('mySessionExample');
-
-  //   if(!c.firstRun){
-  //     if(Session.equals('mySessionExample', 'stop')) {
-  //       alert('We stopped our reactive Function');
-  //       c.stop();
-  //     } else {
-  //       alert(example);
-  //     }
-  //   }
-  // });
-
-  Template.home.created = function(){
-    this.autorun(function(){
-      alert(Session.get('mySessionExample'));
-    });
-  }
-
-
+  Meteor.subscribe("userRoles");
 }

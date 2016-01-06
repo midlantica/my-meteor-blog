@@ -5,7 +5,10 @@
 Here I'm talking about my latest discoveries from the world of JavaScript.
 {{/markdown}}
 
-  <h2>This comes from our Session: {{sessionExample}}</h2>
+  {{#if currentUser.roles.admin}}
+    <a href="/create-post" class="creatNewPost">Create New Post</a>
+  {{/if}}
+
   {{#each postsList}}
     {{> postInList}}
   {{/each}}
