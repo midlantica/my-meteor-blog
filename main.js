@@ -21,4 +21,17 @@ Meteor.users.update(userId, {$set: {
 
 if(Meteor.isClient){
   Meteor.subscribe("userRoles");
+
+  // ReactiveTimer = new Tracker.Dependency;
+
+  // Meteor.setInterval(function(){
+  //   // re-run dependencies every 10s
+  //   ReactiveTimer.changed();
+  // }, 10000 );
+
+  // Tracker.autorun(function(){
+  //   ReactiveTimer.depend();
+  //   console.log('Function re-run every 10 seconds');
+  // });
+
 }

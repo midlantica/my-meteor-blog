@@ -1,4 +1,5 @@
 Template.registerHelper('formatTime', function(time, type){
+  // ReactiveTimer.depend();
   switch(type){
     case 'fromNow':
       return moment.unix(time).fromNow();
@@ -8,3 +9,4 @@ Template.registerHelper('formatTime', function(time, type){
       return moment.unix(time).format('LLLL');
   }
 });
+
